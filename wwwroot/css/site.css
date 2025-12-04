@@ -1,31 +1,344 @@
-html {
-  font-size: 14px;
-}
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
+/* ========== RESET E CONFIGURAÇÕES BÁSICAS ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  margin-bottom: 60px;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
 }
 
-.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
-  color: var(--bs-secondary-color);
-  text-align: end;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
-  text-align: start;
+/* ========== CABEÇALHO ========== */
+.cabecalho {
+    background: linear-gradient(90deg, #2563EB, #1E40AF);
+    color: white;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+    .cabecalho .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.icone-logo {
+    font-size: 30px;
+}
+
+.menu {
+    display: flex;
+    gap: 30px;
+}
+
+    .menu a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        transition: 0.3s;
+    }
+
+        .menu a:hover {
+            color: #BFDBFE;
+        }
+
+/* ========== BANNER PRINCIPAL ========== */
+.banner {
+    background: linear-gradient(135deg, #EBF4FF, #DBEAFE);
+    padding: 100px 20px;
+    text-align: center;
+}
+
+    .banner h1 {
+        font-size: 48px;
+        color: #1E3A8A;
+        margin-bottom: 20px;
+    }
+
+    .banner p {
+        font-size: 20px;
+        color: #374151;
+        margin-bottom: 40px;
+    }
+
+.botoes {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.botao-principal {
+    background: #2563EB;
+    color: white;
+    padding: 15px 40px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+    .botao-principal:hover {
+        background: #1D4ED8;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+    }
+
+.botao-secundario {
+    background: white;
+    color: #2563EB;
+    padding: 15px 40px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    border: 2px solid #2563EB;
+    transition: 0.3s;
+}
+
+    .botao-secundario:hover {
+        background: #2563EB;
+        color: white;
+    }
+
+/* ========== SEÇÃO RECURSOS ========== */
+.recursos {
+    padding: 80px 20px;
+    background: white;
+}
+
+    .recursos h2 {
+        text-align: center;
+        font-size: 36px;
+        margin-bottom: 10px;
+        color: #1F2937;
+    }
+
+.subtitulo {
+    text-align: center;
+    color: #6B7280;
+    margin-bottom: 50px;
+    font-size: 18px;
+}
+
+.grade-recursos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.card-recurso {
+    background: linear-gradient(135deg, #EBF4FF, #FFFFFF);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+    .card-recurso:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+
+    .card-recurso .icone {
+        font-size: 50px;
+        margin-bottom: 20px;
+    }
+
+    .card-recurso h3 {
+        font-size: 20px;
+        margin-bottom: 15px;
+        color: #1F2937;
+    }
+
+    .card-recurso p {
+        color: #6B7280;
+        line-height: 1.6;
+    }
+
+/* ========== SEÇÃO BENEFÍCIOS ========== */
+.beneficios {
+    background: linear-gradient(135deg, #2563EB, #1E40AF);
+    padding: 80px 20px;
+    color: white;
+}
+
+    .beneficios h2 {
+        text-align: center;
+        font-size: 36px;
+        margin-bottom: 50px;
+    }
+
+.lista-beneficios {
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.item-beneficio {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: 0.3s;
+}
+
+    .item-beneficio:hover {
+        background: rgba(255, 255, 255, 0.2);
+    }
+
+.check {
+    background: white;
+    color: #2563EB;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+/* ========== SEÇÃO CONTATO ========== */
+.contato {
+    padding: 80px 20px;
+    background: #F9FAFB;
+}
+
+    .contato h2 {
+        text-align: center;
+        font-size: 36px;
+        margin-bottom: 50px;
+        color: #1F2937;
+    }
+
+.formulario-contato {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.campo {
+    margin-bottom: 20px;
+}
+
+    .campo label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+        color: #374151;
+    }
+
+    .campo input,
+    .campo textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #D1D5DB;
+        border-radius: 8px;
+        font-size: 16px;
+        font-family: Arial, sans-serif;
+    }
+
+        .campo input:focus,
+        .campo textarea:focus {
+            outline: none;
+            border-color: #2563EB;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+.botao-enviar {
+    width: 100%;
+    background: #2563EB;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+    .botao-enviar:hover {
+        background: #1D4ED8;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+    }
+
+.mensagem-sucesso {
+    background: #10B981;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+/* ========== RODAPÉ ========== */
+.rodape {
+    background: #1F2937;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+    .rodape p {
+        margin: 5px 0;
+    }
+
+/* ========== RESPONSIVO ========== */
+@media (max-width: 768px) {
+    .cabecalho .container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .menu {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .banner h1 {
+        font-size: 32px;
+    }
+
+    .banner p {
+        font-size: 16px;
+    }
+
+    .botoes {
+        flex-direction: column;
+        align-items: center;
+    }
 }

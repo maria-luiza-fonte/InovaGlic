@@ -1,32 +1,25 @@
-using System.Diagnostics;
-using InovaGlic.Models;
+﻿using InovaGlic.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace InovaGlic.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
-
+        // Método que carrega a página inicial
         public IActionResult Index()
         {
             return View();
         }
 
-        public IActionResult Privacy()
+        // Método para receber mensagem de contato
+        [HttpPost]
+        public IActionResult EnviarMensagem(string nome, string email, string mensagem)
         {
-            return View();
-        }
+            // Aqui você poderia salvar no banco de dados
+            // Por enquanto, só mostra uma mensagem de sucesso
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            TempData["Sucesso"] = "Mensagem enviada com sucesso!";
+            return RedirectToAction("Index");
         }
     }
 }

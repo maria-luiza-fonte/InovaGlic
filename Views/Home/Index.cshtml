@@ -1,8 +1,106 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+	ViewData["Title"] = "InovaGlic - Início";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!-- SEÇÃO 1: BANNER PRINCIPAL -->
+<section class="banner">
+	<div class="container">
+		<h1>Monitoramento inteligente de insulina</h1>
+		<p>Tecnologia que cuida da sua saúde com precisão e carinho</p>
+		<div class="botoes">
+			<a href="#contato" class="botao-principal">Baixar App</a>
+			<a href="#recursos" class="botao-secundario">Saiba Mais</a>
+		</div>
+	</div>
+</section>
+
+<!-- SEÇÃO 2: RECURSOS DO APP -->
+<section id="recursos" class="recursos">
+	<div class="container">
+		<h2>Recursos do Aplicativo</h2>
+		<p class="subtitulo">Tudo que você precisa em um só lugar</p>
+		<div class="grade-recursos">
+			<div class="card-recurso">
+				<div class="icone">📊</div>
+				<h3>Monitoramento 24/7</h3>
+				<p>Acompanhe seus níveis de insulina o tempo todo</p>
+			</div>
+			<div class="card-recurso">
+				<div class="icone">🔔</div>
+				<h3>Alertas Inteligentes</h3>
+				<p>Receba avisos quando precisar aplicar insulina</p>
+			</div>
+			<div class="card-recurso">
+				<div class="icone">👨‍👩‍👧</div>
+				<h3>Compartilhamento</h3>
+				<p>Médicos e família podem acompanhar sua saúde</p>
+			</div>
+			<div class="card-recurso">
+				<div class="icone">🔒</div>
+				<h3>Segurança</h3>
+				<p>Seus dados protegidos com criptografia</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- SEÇÃO 3: BENEFÍCIOS -->
+<section id="beneficios" class="beneficios">
+	<div class="container">
+		<h2>Por que escolher o InovaGlic?</h2>
+		<div class="lista-beneficios">
+			<div class="item-beneficio">
+				<span class="check">✓</span>
+				<span>Controle total dos níveis de insulina</span>
+			</div>
+			<div class="item-beneficio">
+				<span class="check">✓</span>
+				<span>Prevenção de emergências</span>
+			</div>
+			<div class="item-beneficio">
+				<span class="check">✓</span>
+				<span>Histórico completo de aplicações</span>
+			</div>
+			<div class="item-beneficio">
+				<span class="check">✓</span>
+				<span>Relatórios para consultas médicas</span>
+			</div>
+			<div class="item-beneficio">
+				<span class="check">✓</span>
+				<span>Interface simples e fácil de usar</span>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- SEÇÃO 4: CONTATO -->
+<section id="contato" class="contato">
+	<div class="container">
+		<h2>Entre em Contato</h2>
+
+		@if (TempData["Sucesso"] != null)
+		{
+			<div class="mensagem-sucesso">
+				@TempData["Sucesso"]
+			</div>
+		}
+
+		<div class="formulario-contato">
+			<form method="post" asp-action="EnviarMensagem">
+				<div class="campo">
+					<label>Nome:</label>
+					<input type="text" name="nome" required />
+				</div>
+				<div class="campo">
+					<label>Email:</label>
+					<input type="email" name="email" required />
+				</div>
+				<div class="campo">
+					<label>Mensagem:</label>
+					<textarea name="mensagem" rows="5" required></textarea>
+				</div>
+				<button type="submit" class="botao-enviar">Enviar Mensagem</button>
+			</form>
+		</div>
+	</div>
+</section>
