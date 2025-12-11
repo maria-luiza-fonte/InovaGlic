@@ -12,7 +12,6 @@
 
         public string Email { get; set; }
 
-        // Lista de pacientes vinculados a esse médico
         public List<Paciente> UsuariosVinculados { get; set; }
     }
 }

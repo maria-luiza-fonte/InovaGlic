@@ -19,6 +19,7 @@
 				<a href="#recursos">Recursos</a>
 				<a href="#beneficios">Benefícios</a>
 				<a href="#contato">Contato</a>
+				<partial name="_LoginPartial" />
 			</nav>
 		</div>
 	</header>
@@ -37,5 +38,6 @@
 	</footer>
 
 	<script src="~/js/site.js"></script>
+	@RenderSection("Scripts", required: false)
 </body>
 </html>
